@@ -7,7 +7,7 @@ int main()
 {   // Variable declaration is always first. //
         
     int i, operation, key;         
-    char ceasarCipher[600], letter;
+    char ceasarCipher[100], letter;
     
     
     // First of all we are going to create a kind of menu that the user can select //
@@ -16,7 +16,7 @@ int main()
     // We then assign the entered value to a variable so it can be given to the switch case. //
 
     
-    printf("Please enter the operation code for the task you wish to perform:\n0) Encription\n1) Decription\n2) Statistical Analysis\n");
+    printf("Please enter the operation code for the task you wish to perform:\n0) Encription\n1) Decription\n2) Statistical Analysis\n\n");
     scanf("%d", &operation);
     
     // The switch (below) will now recieve the code and go off to excecute the desired task. //
@@ -26,14 +26,14 @@ int main()
         
         // Case 0 is Encription //
         case 0:     
-                    printf("Enter a message you wish to encript:\n");
-                    gets(ceasarCipher);
-                    printf("Enter the key (i.e. shift amount of positions): ");
+                    printf("Enter a message you wish to encript:\n\n");
+                    fgets(ceasarCipher,100,stdin);
+                    printf("Enter the key (i.e. shift amount of positions):\n\n");
                     scanf("%d", &key);
                     
-                    for(i=0;ceasarcipher[i] != '\0'; ++i)
+                    for(i = 0;ceasarCipher[i] != '\0'; ++i)
                     {
-                    letter = ceasarcipher[i];
+                    letter = ceasarCipher[i];
             
                         if(letter >= 'A' && letter <= 'Z')
                         {
@@ -44,12 +44,13 @@ int main()
                             letter = letter - 'Z' + 'A' - 1;   
                             }
                         
-                        ceasarcipher[i] = letter; 
+                    ceasarCipher[i] = letter; 
                 
                         }       
         
             
-                    }           
+                    } 
+                    printf("Your encripted message: %s", ceasarCipher);
         
         break;
         
